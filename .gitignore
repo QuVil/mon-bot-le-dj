@@ -138,3 +138,4 @@ google-credentials.json
 /credentials-sheets.json
 /cache/
 /*.ipynb
+/data/achmusik.csv
