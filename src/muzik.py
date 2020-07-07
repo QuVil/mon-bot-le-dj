@@ -1,15 +1,18 @@
 
-from .color import Color
-import pandas as pd
-import numpy as np
-from spotipy.oauth2 import SpotifyClientCredentials, SpotifyOAuth
-import spotipy
-from spotipy import SpotifyException
 import math
 import json
 import hashlib
 import os
 import base64
+
+import pandas as pd
+import numpy as np
+from spotipy.oauth2 import SpotifyClientCredentials, SpotifyOAuth
+import spotipy
+from spotipy import SpotifyException
+
+from src.color import Color
+
 CACHE_DIR = "cache/"
 ACH_IDS = "ids.pkl"
 MISSING_IDS = "missing.csv"
