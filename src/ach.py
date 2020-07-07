@@ -30,8 +30,11 @@ class Ach:
             .get(spreadsheetId=SPREADSHEET, range='Notations')\
             .execute()['values']
         headers = values.pop(0)
+        ach = pd.DataFrame.from_records(values)
+        if ach.shape[1] > len(headers):
+            ach.drop(ach.columns[len(headers):], axis=1, inplace=True)
         # Format data as pd.DataFrame
-        ach = pd.DataFrame(values, columns=headers)
+        ach.columns = headers
         ach.set_index(['genre', 'sub_genre', 'artist', 'album', 'song'],
                       inplace=True)
         return ach
