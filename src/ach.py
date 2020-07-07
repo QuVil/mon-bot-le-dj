@@ -75,7 +75,7 @@ class Ach:
         column = self.api_columns["api:Spotify"]
         range_ = f"Notations!{column}2:{column}{len(ids)+1}"
         ordered_index = self.__load_from_cache().index
-        ids_strings = ids.fillna("").reindex(ordered_index)
+        ids_strings = ids.fillna("none").reindex(ordered_index)
         payload = {
             "majorDimension": "ROWS",
             "values": ids_strings.values.reshape(-1, 1).tolist()
