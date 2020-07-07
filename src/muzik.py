@@ -12,8 +12,8 @@ import spotipy
 from spotipy import SpotifyException
 
 from src.color import Color
+from src.util import create_cache_dir, CACHE_DIR
 
-CACHE_DIR = "cache/"
 ACH_IDS = "ids.pkl"
 MISSING_IDS = "missing.csv"
 CRED_PATH_SPOTIFY = "credentials-spotify.json"
@@ -31,19 +31,12 @@ PLAYLIST_DESC = "Auto generated playlist for the"\
 class Muzik:
 
     def __init__(self, public_api=False):
-        self.__create_cache_dir()
+        create_cache_dir()
         self.ids = self.__read_cached_ids()
         if public_api:
             self.__sp = self.__connect_spotify()
         self.__sp_user = self.__connect_spotify_user()
         self.__user_id = self.__sp_user.me()["id"]
-
-    def __create_cache_dir(self):
-        """
-        Create cache dir at `CACHE_DIR` if doesn't already exists
-        """
-        if not os.path.isdir(CACHE_DIR):
-            os.mkdir(CACHE_DIR)
 
     def __read_cached_ids(self) -> pd.Series:
         """
