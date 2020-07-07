@@ -1,3 +1,5 @@
+import time
+
 import pandas as pd
 from googleapiclient.discovery import build
 from google.oauth2.service_account import Credentials
@@ -98,6 +100,7 @@ class Ach:
         self.__update_cell_note(column)
 
     def __update_cell_note(self, column):
+        note = f"Last updated : {time.ctime()}"
         notes = {
             "updateCells": {
                 "fields": "note",
@@ -112,7 +115,7 @@ class Ach:
                     {
                         "values": [
                             {
-                                "note": "my note"
+                                "note": note
                             }
                         ]
                     }
