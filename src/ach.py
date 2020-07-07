@@ -28,7 +28,10 @@ class Ach:
         api_col = {}
         for idx, name in enumerate(headers):
             if API_PREFIX in name:
-                api_col[name] = self.__column_to_letter(idx)
+                api_col[name] = {
+                    "letter": self.__column_to_letter(idx),
+                    "index": idx
+                }
         self.api_columns = api_col
         print(self.api_columns)
 
@@ -73,7 +76,8 @@ class Ach:
 
     def update_missing(self, ids):
         column = self.api_columns["api:Spotify"]
-        range_ = f"Notations!{column}2:{column}{len(ids)+1}"
+        range_ = f"{ACH_SHEET_NAME}!{column['letter']}2:"\
+            f"{column['letter']}{len(ids)+1}"
         ordered_index = self.__load_from_cache().index
         ids_strings = ids.fillna("none").reindex(ordered_index)
         payload = {
@@ -99,8 +103,8 @@ class Ach:
                     "sheetId": 0,
                     "startRowIndex": 0,
                     "endRowIndex": 1,
-                    "startColumnIndex": 0,
-                    "endColumnIndex": 1
+                    "startColumnIndex": column['index'],
+                    "endColumnIndex": column['index'] + 1
                 },
                 "rows": [
                     {
