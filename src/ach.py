@@ -89,5 +89,32 @@ class Ach:
                             valueInputOption="RAW",
                             body=payload)\
                     .execute()
+        self.__update_cell_note(column)
 
-        pass
+    def __update_cell_note(self, column):
+        notes = {
+            "updateCells": {
+                "fields": "note",
+                "range": {
+                    "sheetId": 0,
+                    "startRowIndex": 0,
+                    "endRowIndex": 1,
+                    "startColumnIndex": 0,
+                    "endColumnIndex": 1
+                },
+                "rows": [
+                    {
+                        "values": [
+                            {
+                                "note": "my note"
+                            }
+                        ]
+                    }
+                ],
+            }
+        }
+        body = {"requests": [notes]}
+        self.service.spreadsheets()\
+            .batchUpdate(spreadsheetId=SPREADSHEET,
+                         body=body)\
+            .execute()
