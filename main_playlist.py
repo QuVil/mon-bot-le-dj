@@ -1,4 +1,3 @@
-
 from src.muzik import Muzik
 from prototyping.data import load_from_api
 from prototyping.playlist import create_playlist
@@ -18,8 +17,9 @@ if __name__ == "__main__":
     ach.set_index(['genre', 'sub_genre', 'artist', 'album', 'song'], inplace=True)
     # updates the cached version
     muzik.update(ach)
-    
+
     # generate playlist
-    playlist = create_playlist()
+    playlist = create_playlist(people=["Qu", "Vi"], count_factor=1, inhib_factor=2, min_score=7, size=80,
+                               default_grade=5, eliminating_grade=4.6)
     # push the playlist
     muzik.create_playlist(playlist)
