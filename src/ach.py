@@ -74,7 +74,8 @@ class Ach:
     def update_missing(self, ids):
         column = self.api_columns["api:Spotify"]
         range_ = f"Notations!{column}2:{column}{len(ids)+1}"
-        ids_strings = ids.fillna("")
+        ordered_index = self.__load_from_cache().index
+        ids_strings = ids.fillna("").reindex(ordered_index)
         payload = {
             "majorDimension": "ROWS",
             "values": ids_strings.values.reshape(-1, 1).tolist()
