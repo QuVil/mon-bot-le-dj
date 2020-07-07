@@ -137,3 +137,5 @@ google-credentials.json
 /credentials-spotify.json
 /credentials-sheets.json
 /cache/
+/*.ipynb
+/data/achmusik.csv
