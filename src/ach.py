@@ -8,6 +8,8 @@ CREDENTIALS_PATH_GOOGLE = 'google-credentials.json'
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 SPREADSHEET = '1nkczsf-EeEWVzoNjD3UdB2Xr2W4jD7YEXD_ImRbXHNc'  # GARY SHEETS
 ACH_SHEETS = "achmusik.pkl"
+ACH_SHEET_NAME = "Notations"
+ACH_SHEET_ID = 0
 API_PREFIX = "api:"
 
 
@@ -51,7 +53,7 @@ class Ach:
         self.service = build('sheets', 'v4', credentials=credentials)
         # Gets values from Ach! Musik: Notations sheet.
         values = self.service.spreadsheets().values()\
-            .get(spreadsheetId=SPREADSHEET, range='Notations')\
+            .get(spreadsheetId=SPREADSHEET, range=ACH_SHEET_NAME)\
             .execute()['values']
         headers = values.pop(0)
         self.__get_api_columns(headers)
@@ -100,7 +102,7 @@ class Ach:
             "updateCells": {
                 "fields": "note",
                 "range": {
-                    "sheetId": 0,
+                    "sheetId": ACH_SHEET_ID,
                     "startRowIndex": 0,
                     "endRowIndex": 1,
                     "startColumnIndex": column['index'],
