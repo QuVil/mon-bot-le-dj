@@ -362,6 +362,5 @@ class Muzik:
 
         print("Playlist done")
 
-    def get_playlists(self):
-        self.__update_token()
-        return self.__sp_user.user_playlists(self.__user_id)
+    def get_ids(self):
+        return self.ids
