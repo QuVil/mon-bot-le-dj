@@ -36,8 +36,7 @@ class Ach:
         return ach.drop(self.api_columns, axis=1)
 
     def __load_from_cache(self):
-        print("Error while reading from google\n"
-              "Reading from cache")
+        print("Reading from cache")
         return pd.read_pickle(cache(ACH_SHEETS))
 
     def __load_from_google(self):
@@ -68,6 +67,7 @@ class Ach:
             ach = self.__load_from_google()
             ach.to_pickle(cache(ACH_SHEETS))
         except Exception:
+            print("Error while reading from google")
             ach = self.__load_from_cache()
         return ach
 
