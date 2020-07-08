@@ -89,7 +89,7 @@ class Ach:
             "values": ids_strings.values.reshape(-1, 1).tolist()
         }
         print(range_)
-        print("lol")
+        print(len(payload["values"]))
         self.service.spreadsheets()\
                     .values()\
                     .update(spreadsheetId=SPREADSHEET,
