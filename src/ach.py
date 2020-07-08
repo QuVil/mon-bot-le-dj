@@ -8,7 +8,7 @@ from src.util import create_cache_dir, cache
 
 CREDENTIALS_PATH_GOOGLE = 'google-credentials.json'
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
-SPREADSHEET = '1nkczsf-EeEWVzoNjD3UdB2Xr2W4jD7YEXD_ImRbXHNc'  # GARY SHEETS
+SPREADSHEET = '1b75J-QTGrujSgF9r0_JPOKkcXAwzFVwpETOAyVBw8ak'
 ACH_SHEETS = "achmusik.pkl"
 ACH_SHEET_NAME = "Notations"
 ACH_SHEET_ID = 0
