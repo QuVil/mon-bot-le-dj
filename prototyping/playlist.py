@@ -59,10 +59,11 @@ def create_playlist(people=None, count_factor=.1, inhib_factor=2, min_score=5.5,
     playlist = data.sample(n=size, weights="rank")
 
     # Rearranging playlist to avoid sudden genre changes
-    genres = [playlist for _, playlist in playlist.groupby("genre")]
-    random.shuffle(genres)
-
-    return pd.concat(genres)
+    # genres = [playlist for _, playlist in playlist.groupby("genre")]
+    # random.shuffle(genres)
+    #
+    # return pd.concat(genres)
+    return playlist
 
 
 if __name__ == "__main__":
