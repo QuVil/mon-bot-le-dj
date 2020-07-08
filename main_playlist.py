@@ -1,6 +1,6 @@
 from src.muzik import Muzik
 from prototyping.data import load_from_api
-from prototyping.playlist import create_playlist
+from prototyping.playlist import create_playlist, shuffle_playlist
 
 if __name__ == "__main__":
     # create Spotify connector
@@ -19,7 +19,10 @@ if __name__ == "__main__":
     muzik.update(ach)
 
     # generate playlist
-    playlist = create_playlist(people=["Qu", "Vi"], count_factor=1, inhib_factor=2, min_score=7, size=80,
+    playlist = create_playlist(people=["Qu"], count_factor=0, inhib_factor=1, min_score=7, size=100,
                                default_grade=5, eliminating_grade=4.6)
+    playlist = shuffle_playlist(playlist, default_transition="4,0", chain_factor=.6, desperation_factor=.6,
+                                default_threshold=8)
+
     # push the playlist
     muzik.create_playlist(playlist)
