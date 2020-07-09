@@ -335,8 +335,10 @@ class Muzik:
         # get the tracks
         tracks_all = self.ids[playlist.index]
         tracks_results = tracks_all.isnull().value_counts()
-        print(f"Adding {tracks_results[False]} tracks,"
-              f" Missing {tracks_results[True]} tracks")
+        print(f"Adding {tracks_results[False]} tracks")
+        if True in tracks_results:
+            # some tracks are missing
+            print(f" Missing {tracks_results[True]} tracks")
         tracks_id = tracks_all.dropna().values
         print(f"Inserting {len(tracks_id)} songs in the playlist...")
         # spotify api "only" handles 100 tracks by requests
