@@ -1,19 +1,23 @@
 
-from .color import Color
-import pandas as pd
-import numpy as np
-from spotipy.oauth2 import SpotifyClientCredentials, SpotifyOAuth
-import spotipy
-from spotipy import SpotifyException
 import math
 import json
 import hashlib
 import os
 import base64
-CACHE_DIR = "cache/"
+
+import pandas as pd
+import numpy as np
+from spotipy.oauth2 import SpotifyClientCredentials, SpotifyOAuth
+import spotipy
+from spotipy import SpotifyException
+
+from src.color import Color
+from src.util import create_cache_dir, CACHE_DIR
+
 ACH_IDS = "ids.pkl"
 MISSING_IDS = "missing.csv"
 CRED_PATH_SPOTIFY = "credentials-spotify.json"
+API_NAME = "Spotify"
 UNAUTHORIZED_ST_CODE = 401
 MAX_TRACK_PER_REQUESTS = 100
 MARKETS = ["FR", "US"]
@@ -28,19 +32,13 @@ PLAYLIST_DESC = "Auto generated playlist for the"\
 class Muzik:
 
     def __init__(self, public_api=False):
-        self.__create_cache_dir()
+        create_cache_dir()
         self.ids = self.__read_cached_ids()
         if public_api:
             self.__sp = self.__connect_spotify()
         self.__sp_user = self.__connect_spotify_user()
         self.__user_id = self.__sp_user.me()["id"]
-
-    def __create_cache_dir(self):
-        """
-        Create cache dir at `CACHE_DIR` if doesn't already exists
-        """
-        if not os.path.isdir(CACHE_DIR):
-            os.mkdir(CACHE_DIR)
+        self.name = API_NAME
 
     def __read_cached_ids(self) -> pd.Series:
         """
@@ -188,7 +186,7 @@ class Muzik:
         # small hack to access the data from the index & the columns
         indexs = pd.MultiIndex.from_frame(df)
         songs = pd.DataFrame(data=df.values, index=indexs,
-                             columns=df.columns)
+                             columns=df.columns).dropna(how="all")
         ids = pd.Series(index=indexs,
                         dtype=str, name="ids")
         bad_formats = []
@@ -321,6 +319,7 @@ class Muzik:
         self.ids.to_pickle(CACHE_DIR + ACH_IDS)
         # also updates missing ID list
         self.__update_missing_list()
+        return self.ids[~self.ids.isnull()]
 
     def create_playlist(self, playlist):
         """
@@ -336,8 +335,10 @@ class Muzik:
         # get the tracks
         tracks_all = self.ids[playlist.index]
         tracks_results = tracks_all.isnull().value_counts()
-        print(f"Adding {tracks_results[False]} tracks,"
-              f" Missing {tracks_results[True]} tracks")
+        print(f"Adding {tracks_results[False]} tracks")
+        if True in tracks_results:
+            # some tracks are missing
+            print(f" Missing {tracks_results[True]} tracks")
         tracks_id = tracks_all.dropna().values
         print(f"Inserting {len(tracks_id)} songs in the playlist...")
         # spotify api "only" handles 100 tracks by requests
@@ -365,7 +366,3 @@ class Muzik:
                 )
 
         print("Playlist done")
-
-    def get_playlists(self):
-        self.__update_token()
-        return self.__sp_user.user_playlists(self.__user_id)

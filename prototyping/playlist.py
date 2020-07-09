@@ -4,7 +4,7 @@ import pandas as pd
 from .data import load_from_api, load_from_cache
 
 
-def create_playlist(people=None, count_factor=.1, inhib_factor=2, min_score=5.5, size=300, default_grade=5,
+def create_playlist(data, people=None, count_factor=.1, inhib_factor=2, min_score=5.5, size=300, default_grade=5,
                     eliminating_grade=4.6):
     """
     Create a personalized playlist with ACHMUSIK data loaded directly from the sheet
@@ -20,14 +20,6 @@ def create_playlist(people=None, count_factor=.1, inhib_factor=2, min_score=5.5,
     if people is None:
         people = ["Qu", "Gr", "Vi", "Ro"]
     count_inhib = len(people) // inhib_factor
-
-    print("Loading data from API...")
-    data = load_from_api()
-
-    # Getting the decimals right -- commas to points and no more Nones
-    print("Analyzing data...")
-    data = data.set_index(["genre", "sub_genre", "artist", "album", "song"])
-    data.fillna(value="", inplace=True)
 
     for i in range(data.columns.size):
         data[data.columns[i]] = data[data.columns[i]].str.replace(",", ".")
