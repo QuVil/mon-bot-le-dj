@@ -57,7 +57,6 @@ class Ach:
                     "index": idx
                 }
         self.api_columns = api_col
-        print(self.api_columns)
 
     def __drop_api_columns(self, ach):
         return ach.drop(self.api_columns, axis=1)
