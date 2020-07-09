@@ -17,6 +17,7 @@ from src.util import create_cache_dir, CACHE_DIR
 ACH_IDS = "ids.pkl"
 MISSING_IDS = "missing.csv"
 CRED_PATH_SPOTIFY = "credentials-spotify.json"
+API_NAME = "Spotify"
 UNAUTHORIZED_ST_CODE = 401
 MAX_TRACK_PER_REQUESTS = 100
 MARKETS = ["FR", "US"]
@@ -37,6 +38,7 @@ class Muzik:
             self.__sp = self.__connect_spotify()
         self.__sp_user = self.__connect_spotify_user()
         self.__user_id = self.__sp_user.me()["id"]
+        self.name = API_NAME
 
     def __read_cached_ids(self) -> pd.Series:
         """

@@ -101,20 +101,20 @@ class Ach:
         self.__check_for_duplicates()
         return self.ach
 
-    def update_missing(self, ids: pd.Series):
+    def update_missing(self, ids: pd.Series, api_name):
         if not self.updated:
             raise Exception("Cannot update tracks from a not "
                             "updated version of the sheet")
         print("Updating missing songs...")
         ordered_index = self.ach.index
-        column = self.api_columns["api:Spotify"]
+        column = self.api_columns[f"{API_PREFIX}{api_name}"]
         ids_strings = ids.reindex(ordered_index, fill_value="none")
         payload = {
             "majorDimension": "ROWS",
             "values": ids_strings.values.reshape(-1, 1).tolist()
         }
-        range_ = f"{ACH_SHEET_NAME}!{column['letter']}2:"\
-            f"{column['letter']}{len(ids_strings)+1}"
+        range_ = (f"{ACH_SHEET_NAME}!{column['letter']}2:"
+                  f"{column['letter']}{len(ids_strings)+1}")
         self.service.spreadsheets()\
                     .values()\
                     .update(spreadsheetId=SPREADSHEET,
