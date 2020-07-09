@@ -1,6 +1,7 @@
 import time
 
 import pandas as pd
+import numpy as np
 from googleapiclient.discovery import build
 from google.oauth2.service_account import Credentials
 
@@ -19,6 +20,25 @@ class Ach:
 
     def __init__(self):
         create_cache_dir()
+
+    def __check_empty_row(self):
+        df_index = self.ach.index.to_frame(index=False)
+        empty = df_index[
+            df_index.replace(r"^\s$", value=np.NaN, regex=True)
+                    .isnull()
+                    .all(axis=1)
+        ].index
+        if len(empty) > 0:
+            print("WARNING some empty rows in the datasheet:")
+            for idx in empty:
+                print(f"Empty row at index {idx + 2}")
+
+    def __check_for_duplicates(self):
+        duplicates = self.ach.index[self.ach.index.duplicated()].tolist()
+        if len(duplicates) > 0:
+            print("WARNING some duplicated in the datasheet:")
+            for duplicate in duplicates:
+                print(duplicate)
 
     def __column_to_letter(self, idx):
         character = chr(ord('A') + idx % 26)
@@ -79,6 +99,8 @@ class Ach:
         return ach
 
     def update_missing(self, ids):
+        self.__check_empty_row()
+        self.__check_for_duplicates()
         column = self.api_columns["api:Spotify"]
         range_ = f"{ACH_SHEET_NAME}!{column['letter']}2:"\
             f"{column['letter']}{len(ids)+1}"
