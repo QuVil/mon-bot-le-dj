@@ -317,6 +317,7 @@ class Muzik:
         self.ids.to_pickle(CACHE_DIR + ACH_IDS)
         # also updates missing ID list
         self.__update_missing_list()
+        return self.ids[~self.ids.isnull()]
 
     def create_playlist(self, playlist):
         """
