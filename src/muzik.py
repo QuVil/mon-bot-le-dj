@@ -184,7 +184,7 @@ class Muzik:
         # small hack to access the data from the index & the columns
         indexs = pd.MultiIndex.from_frame(df)
         songs = pd.DataFrame(data=df.values, index=indexs,
-                             columns=df.columns)
+                             columns=df.columns).dropna(how="all")
         ids = pd.Series(index=indexs,
                         dtype=str, name="ids")
         bad_formats = []
