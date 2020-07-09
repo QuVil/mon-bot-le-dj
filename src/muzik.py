@@ -364,6 +364,3 @@ class Muzik:
                 )
 
         print("Playlist done")
-
-    def get_ids(self):
-        return self.ids
