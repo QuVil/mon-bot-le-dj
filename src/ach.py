@@ -90,28 +90,32 @@ class Ach:
         return ach
 
     def get_sheets(self):
+        self.updated = False
         try:
-            ach = self.__load_from_google()
-            ach.to_pickle(cache(ACH_SHEETS))
+            self.ach = self.__load_from_google()
+            self.ach.to_pickle(cache(ACH_SHEETS))
+            self.updated = True
         except Exception:
             print("Error while reading from google")
-            ach = self.__load_from_cache()
-        return ach
-
-    def update_missing(self, ids):
+            self.ach = self.__load_from_cache()
         self.__check_empty_row()
         self.__check_for_duplicates()
+        return self.ach
+
+    def update_missing(self, ids: pd.Series):
+        if not self.updated:
+            raise Exception("Cannot update tracks from a not "
+                            "updated version of the sheet")
+        print("Updating missing songs...")
+        ordered_index = self.ach.index
         column = self.api_columns["api:Spotify"]
-        range_ = f"{ACH_SHEET_NAME}!{column['letter']}2:"\
-            f"{column['letter']}{len(ids)+1}"
-        ordered_index = self.__load_from_cache().index
-        ids_strings = ids.fillna("none").reindex(ordered_index)
+        ids_strings = ids.reindex(ordered_index, fill_value="none")
         payload = {
             "majorDimension": "ROWS",
             "values": ids_strings.values.reshape(-1, 1).tolist()
         }
-        print(range_)
-        print(len(payload["values"]))
+        range_ = f"{ACH_SHEET_NAME}!{column['letter']}2:"\
+            f"{column['letter']}{len(ids_strings)+1}"
         self.service.spreadsheets()\
                     .values()\
                     .update(spreadsheetId=SPREADSHEET,
@@ -122,6 +126,7 @@ class Ach:
         self.__update_cell_note(column)
 
     def __update_cell_note(self, column):
+        print("Updating update note...")
         note = f"Last updated : {time.ctime()}"
         notes = {
             "updateCells": {
