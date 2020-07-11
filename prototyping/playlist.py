@@ -1,7 +1,6 @@
 import random
 
 import pandas as pd
-from .data import load_from_api, load_from_cache
 
 
 def create_playlist(data, people=None, count_factor=.1, inhib_factor=2, min_score=5.5, size=300, default_grade=5,
