@@ -19,8 +19,9 @@ if __name__ == "__main__":
     muzik.update(ach)
 
     # generate playlist
-    playlist = create_playlist(people=["Qu"], count_factor=0, inhib_factor=1, min_score=7, size=100,
+    playlist = create_playlist(people=["Qu", "Vi", "Ro"], count_factor=0.35, inhib_factor=1, min_score=7.75, size=100,
                                default_grade=5, eliminating_grade=4.6)
+
     playlist = shuffle_playlist(playlist, default_transition="4,0", chain_factor=.6, desperation_factor=.6,
                                 default_threshold=8)
 

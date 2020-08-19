@@ -55,7 +55,6 @@ def create_playlist(people=None, count_factor=.1, inhib_factor=2, min_score=5.5,
 
     # Eliminating tracks with a grade under the required minimum
     data = data[data[data.columns[:-4]].min(axis=1) > eliminating_grade]
-
     playlist = data.sample(n=size, weights="rank")
 
     return playlist
@@ -71,9 +70,9 @@ def shuffle_playlist(playlist, default_transition="4,0", chain_factor=.6, desper
     :param default_threshold: default threshold for the score needed to accept track as next in shuffle
     :return: a shuffled playlist (DataFrame)
     """
-    transitions = load_from_api("Transitions", fallback="data/transitions.csv").fillna(default_transition)
-    transitions.index = transitions["Unnamed: 0"]
-    transitions.drop("Unnamed: 0", axis=1, inplace=True)
+    transitions = load_from_api("Transitions", fallback="data/csv/transitions.csv").fillna(default_transition)
+    transitions.index = transitions[""]
+    transitions.drop("", axis=1, inplace=True)
 
     # Getting the decimals right again -- commas to points and no more Nones
     for i in range(transitions.columns.size):
@@ -119,6 +118,7 @@ def shuffle_playlist(playlist, default_transition="4,0", chain_factor=.6, desper
             threshold -= desperation_factor
 
     return shuffled_playlist.reset_index(drop=True).set_index(["genre", "sub_genre", "artist", "album", "song"])
+    # return shuffled_playlist.reset_index(drop=True).set_index(["genre", "sub_genre", "artist", "album", "song"])
 
 
 if __name__ == "__main__":

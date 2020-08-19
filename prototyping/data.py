@@ -8,8 +8,8 @@ CREDENTIALS_PATH_GOOGLE = 'google-credentials.json'
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 SPREADSHEET = '1b75J-QTGrujSgF9r0_JPOKkcXAwzFVwpETOAyVBw8ak'
 
-DATA_PATH = "data/achmusik.csv"
-TRANSITIONS_PATH = "data/transitions.csv"
+DATA_PATH = "data/csv/achmusik.csv"
+TRANSITIONS_PATH = "data/csv/transitions.csv"
 
 def load_from_api(sheet="Notations", fallback=DATA_PATH):
     try:
