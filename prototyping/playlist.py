@@ -52,9 +52,11 @@ def create_playlist(data, people=None, count_factor=.1, inhib_factor=2, min_scor
     return playlist
 
 
-def shuffle_playlist(playlist, default_transition="4,0", chain_factor=.6, desperation_factor=.6, default_threshold=8):
+def shuffle_playlist(playlist, default_transition="4,0", chain_factor=.6, desperation_factor=1, default_threshold=8,
+                     verbose=False):
     """
     shuffles a playlist according to genre distance scores
+    :param verbose: self-explanatory
     :param playlist: DataFrame created by create_playlist()
     :param default_transition: default value for transition scores between different genres
     :param chain_factor: 0 < < 1 -- how much chaining the same genre again and again lowers the threshold
@@ -85,14 +87,28 @@ def shuffle_playlist(playlist, default_transition="4,0", chain_factor=.6, desper
 
     while playlist.size > 0:
         for row in playlist.iterrows():
-            if (transitions[current_genre][row[1]["genre"]] + (chain * chain_factor) > threshold
-                and row[1]["artist"] != current_artist) or threshold < 0:
-                # Song accepted -- increment or reset chain
-                current_genre = row[1]["genre"]
-                if current_genre == row[1]["genre"] or threshold == default_threshold:
+            if current_genre != row[1]["genre"]:
+                chain_score = (chain * chain_factor)
+            else:
+                chain_score = -(chain * chain_factor) / 2
+
+            if verbose:
+                print("Trying with ", row[1]["song"], " from ", row[1]["artist"], "-- of genre ", row[1]["genre"],
+                      " transition score from ", current_genre, " is ", transitions[current_genre][row[1]["genre"]],
+                      " plus ", chain, " adding ", chain_score)
+                print("threshold is currently ", threshold)
+
+            if (transitions[current_genre][row[1]["genre"]] + chain_score > threshold
+                and (row[1]["artist"] != current_artist or threshold != default_threshold)) or threshold < 0:
+                if verbose:
+                    print("ACCEPTED")
+                # Song accepted -- increment or reset chain + reset threshold if lowered
+                if current_genre == row[1]["genre"]:
                     chain += 1
                 else:
                     chain = 0
+                    current_genre = row[1]["genre"]
+                    threshold = default_threshold
 
                 # Add song to shuffled playlist and its index to a list for further removal
                 shuffled_playlist = shuffled_playlist.append(playlist.loc[row[0]].drop(playlist.columns[5:]))
@@ -110,7 +126,6 @@ def shuffle_playlist(playlist, default_transition="4,0", chain_factor=.6, desper
             threshold -= desperation_factor
 
     return shuffled_playlist.reset_index(drop=True).set_index(["genre", "sub_genre", "artist", "album", "song"])
-    # return shuffled_playlist.reset_index(drop=True).set_index(["genre", "sub_genre", "artist", "album", "song"])
 
 
 if __name__ == "__main__":
