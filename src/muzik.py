@@ -333,6 +333,7 @@ class Muzik:
         # get the playlist id of PLAYLIST_NAME
         playlist_id = self.__get_playlist_id()
         # get the tracks
+        print(self.ids[self.ids.index.duplicated()])
         tracks_all = self.ids[playlist.index]
         tracks_results = tracks_all.isnull().value_counts()
         print(f"Adding {tracks_results[False]} tracks")
