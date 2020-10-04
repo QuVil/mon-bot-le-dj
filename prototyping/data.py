@@ -11,6 +11,7 @@ SPREADSHEET = '1b75J-QTGrujSgF9r0_JPOKkcXAwzFVwpETOAyVBw8ak'
 DATA_PATH = "data/csv/achmusik.csv"
 TRANSITIONS_PATH = "data/csv/transitions.csv"
 
+
 def load_from_api(sheet="Notations", fallback=DATA_PATH):
     try:
         # Load service account credentials.

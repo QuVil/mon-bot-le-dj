@@ -1,13 +1,16 @@
+import math
 import random
 
 import pandas as pd
-from .data import load_from_api
+from prototyping.data import load_from_api
 
 
 def create_playlist(data, people=None, count_factor=.1, inhib_factor=2, min_score=5.5, size=300, default_grade=5,
-                    eliminating_grade=4.6):
+                    eliminating_grade=4.6, default_genres=True):
     """
     Create a personalized playlist with ACHMUSIK data loaded directly from the sheet
+    :param default_genres: Whether or not to apply default genre grades to total table
+    :param data:
     :param people: The people presently present at the gathering to include in the scoring
     :param count_factor: multiplicative factor to help properly graded songs rise to the top
     :param inhib_factor: the added factor to scoring is count_factor * (COUNT - len(people) / inhib_factor)
@@ -22,11 +25,25 @@ def create_playlist(data, people=None, count_factor=.1, inhib_factor=2, min_scor
     count_inhib = len(people) // inhib_factor
 
     for i in range(data.columns.size):
-        data[data.columns[i]] = data[data.columns[i]].str.replace(",", ".")
         data[data.columns[i]] = pd.to_numeric(data[data.columns[i]], errors='coerce')
 
     # Keeping only present people at the hypothetical party!
     data = data.filter(people)
+
+    # Applying default genre grades if necessary
+    if default_genres:
+        print("Applying default genre grades...")
+        defaults = load_from_api("genre_default", fallback="data/csv/genre_default.csv")
+
+        for i in range(1, defaults.columns.size):
+            defaults[defaults.columns[i]] = pd.to_numeric(defaults[defaults.columns[i]], errors='coerce')
+        defaults = defaults.set_index(["genre"])
+
+        # index holds genre, sub_genre, artist, album and song, row the rest
+        for index, row in data.iterrows():
+            for person, grade in row[5:-2].items():
+                if math.isnan(grade) and defaults.at[index[0], person]:
+                    data.loc[index, person] = defaults.at[index[0], person]
 
     # Hard to do this shit inplace -- if no grades at all, give it a chance to play with default grade
     data = data.dropna(how="all").append(data[data.isnull().all(axis=1)].fillna(default_grade))
@@ -129,4 +146,5 @@ def shuffle_playlist(playlist, default_transition="4,0", chain_factor=.6, desper
 
 
 if __name__ == "__main__":
-    print(create_playlist())
+    sheet = pd.read_csv("../data/csv/achmusik.csv")
+    print(create_playlist(sheet))
