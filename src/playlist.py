@@ -30,8 +30,9 @@ def create_playlist(data, people=None, count_factor=.1, inhib_factor=2, min_scor
     data = data.filter(people)
 
     # Keeping only non numerical results (recommendations) for reco type PL
+    # TODO allow for more than 1 person to create a recommended playlist! Couldn't figure out the snippet to do it right
     if playlist_type == "reco":
-        data = data[data.Gë.apply(lambda x: "." not in x and not x.isnumeric() and x != "")]
+        data = data[data[people[0]].apply(lambda x: "." not in x and not x.isnumeric() and x != "")]
     else:
         for i in range(data.columns.size):
             data[data.columns[i]] = pd.to_numeric(data[data.columns[i]], errors='coerce')
