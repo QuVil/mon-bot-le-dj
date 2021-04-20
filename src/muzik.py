@@ -21,7 +21,7 @@ API_NAME = "Spotify"
 UNAUTHORIZED_ST_CODE = 401
 MAX_TRACK_PER_REQUESTS = 100
 MARKETS = ["FR", "US"]
-PLAYLIST_NAME = "Mon Bot le DJ"
+PLAYLIST_NAME = "Mon Bot Le DJ"
 PLAYLIST_COVER = "data/playlist_cover.jpg"
 PLAYLIST_DESC = "Auto generated playlist for the"\
                 " project mon-bot-le-dj, visit"\

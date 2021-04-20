@@ -1,14 +1,16 @@
 import math
 import random
+import re
 
 import pandas as pd
 from prototyping.data import load_from_api
 
 
 def create_playlist(data, people=None, count_factor=.1, inhib_factor=2, min_score=5.5, size=300, default_grade=5,
-                    eliminating_grade=4.6, default_genres=True):
+                    eliminating_grade=4.6, default_genres=True, playlist_type="default"):
     """
     Create a personalized playlist with ACHMUSIK data loaded directly from the sheet
+    :param playlist_type: default or reco
     :param default_genres: Whether or not to apply default genre grades to total table
     :param data:
     :param people: The people presently present at the gathering to include in the scoring
@@ -24,14 +26,18 @@ def create_playlist(data, people=None, count_factor=.1, inhib_factor=2, min_scor
         people = ["Qu", "Gr", "Vi", "Ro"]
     count_inhib = len(people) // inhib_factor
 
-    for i in range(data.columns.size):
-        data[data.columns[i]] = pd.to_numeric(data[data.columns[i]], errors='coerce')
-
     # Keeping only present people at the hypothetical party!
     data = data.filter(people)
 
+    # Keeping only non numerical results (recommendations) for reco type PL
+    if playlist_type == "reco":
+        data = data[data.Gë.apply(lambda x: "." not in x and not x.isnumeric() and x != "")]
+    else:
+        for i in range(data.columns.size):
+            data[data.columns[i]] = pd.to_numeric(data[data.columns[i]], errors='coerce')
+
     # Applying default genre grades if necessary
-    if default_genres:
+    if default_genres and playlist_type != "reco":
         print("Applying default genre grades...")
         defaults = load_from_api("genre_default", fallback="data/csv/genre_default.csv")
 
@@ -48,14 +54,18 @@ def create_playlist(data, people=None, count_factor=.1, inhib_factor=2, min_scor
     # Hard to do this shit inplace -- if no grades at all, give it a chance to play with default grade
     data = data.dropna(how="all").append(data[data.isnull().all(axis=1)].fillna(default_grade))
 
-    # Mean of all notes for each track
-    data["mean"] = data[data.columns].mean(axis=1)
-    # Amount of notes for each track
-    data["count"] = data.count(axis=1) - 1
-    # Helping songs graded by more people in the group
-    data["score"] = data["mean"] + (count_factor * (data["count"] - count_inhib))
-    # Truncating to keep only the acceptable songs
-    data = data[data["score"] > min_score]
+    # No need for score for recommendation PLs
+    if playlist_type != "reco":
+        # Mean of all notes for each track
+        data["mean"] = data[data.columns].mean(axis=1)
+        # Amount of notes for each track
+        data["count"] = data.count(axis=1) - 1
+        # Helping songs graded by more people in the group
+        data["score"] = data["mean"] + (count_factor * (data["count"] - count_inhib))
+        # Truncating to keep only the acceptable songs
+        data = data[data["score"] > min_score]
+    else:
+        data["score"] = 10
 
     # Using ranking of scores as weight for the playlist bootstrap
     print("Creating playlist...")
@@ -63,8 +73,11 @@ def create_playlist(data, people=None, count_factor=.1, inhib_factor=2, min_scor
     data["rank"] = data["score"].rank(method="min")
 
     # Eliminating tracks with a grade under the required minimum
-    data = data[data[data.columns[:-4]].min(axis=1) > eliminating_grade]
-    playlist = data.sample(n=size, weights="rank")
+    if playlist_type != "reco":
+        data = data[data[data.columns[:-4]].min(axis=1) > eliminating_grade]
+
+    # Creating bootstrap sample of adequate size
+    playlist = data.sample(n=size if size < len(data) else len(data), weights="rank")
 
     return playlist
 
