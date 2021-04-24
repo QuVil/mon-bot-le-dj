@@ -1,0 +1,142 @@
+[
+  {
+    "model": "api.genre",
+    "fields": {
+      "name": "Reggae"
+    },
+    "pk": 1
+  },
+  {
+    "model": "api.genre",
+    "fields": {
+      "name": "Rock"
+    },
+    "pk": 2
+  },
+  {
+    "model": "api.genre",
+    "fields": {
+      "name": "Hip-Hop"
+    },
+    "pk": 3
+  },
+  {
+    "model": "api.genre",
+    "fields": {
+      "name": "Metal"
+    },
+    "pk": 4
+  },
+  {
+    "model": "api.genre",
+    "fields": {
+      "name": "Pop"
+    },
+    "pk": 5
+  },
+  {
+    "model": "api.genre",
+    "fields": {
+      "name": "Electro"
+    },
+    "pk": 6
+  },
+  {
+    "model": "api.genre",
+    "fields": {
+      "name": "Jazz"
+    },
+    "pk": 7
+  },
+  {
+    "model": "api.genre",
+    "fields": {
+      "name": "R&B"
+    },
+    "pk": 8
+  },
+  {
+    "model": "api.genre",
+    "fields": {
+      "name": "Acoustic"
+    },
+    "pk": 9
+  },
+  {
+    "model": "api.genre",
+    "fields": {
+      "name": "Acapella"
+    },
+    "pk": 10
+  },
+  {
+    "model": "api.genre",
+    "fields": {
+      "name": ""
+    },
+    "pk": 11
+  },
+  {
+    "model": "api.genre",
+    "fields": {
+      "name": "Disco"
+    },
+    "pk": 12
+  },
+  {
+    "model": "api.genre",
+    "fields": {
+      "name": "Blues"
+    },
+    "pk": 13
+  },
+  {
+    "model": "api.genre",
+    "fields": {
+      "name": "Chanson"
+    },
+    "pk": 14
+  },
+  {
+    "model": "api.genre",
+    "fields": {
+      "name": "Country"
+    },
+    "pk": 15
+  },
+  {
+    "model": "api.genre",
+    "fields": {
+      "name": "Funk"
+    },
+    "pk": 16
+  },
+  {
+    "model": "api.genre",
+    "fields": {
+      "name": "Folk"
+    },
+    "pk": 17
+  },
+  {
+    "model": "api.genre",
+    "fields": {
+      "name": "Classique"
+    },
+    "pk": 18
+  },
+  {
+    "model": "api.genre",
+    "fields": {
+      "name": "Dance"
+    },
+    "pk": 19
+  },
+  {
+    "model": "api.genre",
+    "fields": {
+      "name": "Musical"
+    },
+    "pk": 20
+  }
+]
