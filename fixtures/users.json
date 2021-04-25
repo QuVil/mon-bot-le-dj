@@ -92,7 +92,7 @@
   {
     "model": "api.user",
     "fields": {
-      "name": "G\u00eb",
+      "name": "Gë",
       "spotify_id": null,
       "blacklist": [],
       "friends": []

@@ -24714,7 +24714,7 @@
   {
     "model": "api.grade",
     "fields": {
-      "grade": 8.5,
+      "grade": 8.6,
       "user": 1,
       "song": 2076
     }
