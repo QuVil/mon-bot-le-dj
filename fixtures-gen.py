@@ -46,7 +46,7 @@ if __name__ == "__main__":
     for user in sheets.columns[:-1]:
         u_fields = {
             "name": user,
-            "spotify_id": None,
+            "spotify_id": "",
             "blacklist": [],
             "friends": []
         }
@@ -77,15 +77,15 @@ if __name__ == "__main__":
         if artists_list:
             artists_id = [
                 element_id(artist.strip(), artist_keys, artists,
-                           'artist', spotify_id=None, albums=[])
+                           'artist', spotify_id="", albums=[])
                 for artist in artists_list.split(',')]
         if album:
             album_id = element_id(album, album_keys, albums,
-                                  'album', spotify_id=None, date=None)
+                                  'album', spotify_id="", date=None)
         song_id = len(songs) + 1
         song_fields = {
             "name": song,
-            "spotify_id": None,
+            "spotify_id": "",
             "album": album_id,
             "genres": genre_id,
             "artists": artists_id

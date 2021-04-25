@@ -3,7 +3,7 @@
     "model": "api.user",
     "fields": {
       "name": "Qu",
-      "spotify_id": null,
+      "spotify_id": "",
       "blacklist": [],
       "friends": []
     },
@@ -13,7 +13,7 @@
     "model": "api.user",
     "fields": {
       "name": "Gr",
-      "spotify_id": null,
+      "spotify_id": "",
       "blacklist": [],
       "friends": []
     },
@@ -23,7 +23,7 @@
     "model": "api.user",
     "fields": {
       "name": "Vi",
-      "spotify_id": null,
+      "spotify_id": "",
       "blacklist": [],
       "friends": []
     },
@@ -33,7 +33,7 @@
     "model": "api.user",
     "fields": {
       "name": "Ro",
-      "spotify_id": null,
+      "spotify_id": "",
       "blacklist": [],
       "friends": []
     },
@@ -43,7 +43,7 @@
     "model": "api.user",
     "fields": {
       "name": "Sa",
-      "spotify_id": null,
+      "spotify_id": "",
       "blacklist": [],
       "friends": []
     },
@@ -53,7 +53,7 @@
     "model": "api.user",
     "fields": {
       "name": "Gl",
-      "spotify_id": null,
+      "spotify_id": "",
       "blacklist": [],
       "friends": []
     },
@@ -63,7 +63,7 @@
     "model": "api.user",
     "fields": {
       "name": "Rx",
-      "spotify_id": null,
+      "spotify_id": "",
       "blacklist": [],
       "friends": []
     },
@@ -73,7 +73,7 @@
     "model": "api.user",
     "fields": {
       "name": "Cl",
-      "spotify_id": null,
+      "spotify_id": "",
       "blacklist": [],
       "friends": []
     },
@@ -83,7 +83,7 @@
     "model": "api.user",
     "fields": {
       "name": "Lu",
-      "spotify_id": null,
+      "spotify_id": "",
       "blacklist": [],
       "friends": []
     },
@@ -93,7 +93,7 @@
     "model": "api.user",
     "fields": {
       "name": "Gë",
-      "spotify_id": null,
+      "spotify_id": "",
       "blacklist": [],
       "friends": []
     },
@@ -103,7 +103,7 @@
     "model": "api.user",
     "fields": {
       "name": "Et",
-      "spotify_id": null,
+      "spotify_id": "",
       "blacklist": [],
       "friends": []
     },
@@ -113,7 +113,7 @@
     "model": "api.user",
     "fields": {
       "name": "Ti",
-      "spotify_id": null,
+      "spotify_id": "",
       "blacklist": [],
       "friends": []
     },
@@ -123,7 +123,7 @@
     "model": "api.user",
     "fields": {
       "name": "Be",
-      "spotify_id": null,
+      "spotify_id": "",
       "blacklist": [],
       "friends": []
     },
