@@ -65,6 +65,8 @@ if __name__ == "__main__":
 
     for line in sheets.iterrows():
         genre, sub_genres_list, artists_list, album, song = line[0]
+        if not song:
+            continue
         genres_id, artists_id, album_id = [], [], None
         if genre:
             genre_id = [element_id(genre, genre_keys, genres, 'genre')]
