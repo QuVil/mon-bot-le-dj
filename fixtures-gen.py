@@ -32,8 +32,8 @@ def fixt(pk, model, fields):
 
 def export_json(name, array):
     os.makedirs("fixtures", exist_ok=True)
-    with open(f"fixtures/{name}.json", 'w') as handler:
-        json.dump(array, handler, indent=2)
+    with open(f"fixtures/{name}.json", 'w', encoding="utf-8") as handler:
+        json.dump(array, handler, indent=2, ensure_ascii=False)
 
 
 if __name__ == "__main__":
@@ -65,19 +65,27 @@ if __name__ == "__main__":
 
     for line in sheets.iterrows():
         genre, sub_genres_list, artists_list, album, song = line[0]
-        genre_id = element_id(genre, genre_keys, genres, 'genre')
-        artists_id = [
-            element_id(artist.strip(), artist_keys, artists,
-                       'artist', spotify_id=None, albums=[])
-            for artist in artists_list.split(',')]
-        album_id = element_id(album, album_keys, albums,
-                              'album', spotify_id=None, date=None)
+        genres_id, artists_id, album_id = [], [], None
+        if genre:
+            genre_id = [element_id(genre, genre_keys, genres, 'genre')]
+        if sub_genres_list:
+            genre_id.extend([element_id(sub_genre.strip(), genre_keys,
+                                        genres, 'genre')
+                             for sub_genre in sub_genres_list.split(",")])
+        if artists_list:
+            artists_id = [
+                element_id(artist.strip(), artist_keys, artists,
+                           'artist', spotify_id=None, albums=[])
+                for artist in artists_list.split(',')]
+        if album:
+            album_id = element_id(album, album_keys, albums,
+                                  'album', spotify_id=None, date=None)
         song_id = len(songs) + 1
         song_fields = {
             "name": song,
             "spotify_id": None,
             "album": album_id,
-            "genres": [genre_id],
+            "genres": genre_id,
             "artists": artists_id
         }
         songs.append(fixt(song_id, 'song', song_fields))
