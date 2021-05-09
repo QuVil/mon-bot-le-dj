@@ -163,35 +163,35 @@
   {
     "model": "api.genre",
     "fields": {
-      "name": "Pirate"
+      "name": "Smooth"
     },
     "pk": 24
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Glam"
+      "name": "Pirate"
     },
     "pk": 25
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Grunge"
+      "name": "Glam"
     },
     "pk": 26
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "R&B"
+      "name": "Grunge"
     },
     "pk": 27
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Trap"
+      "name": "R&B"
     },
     "pk": 28
   },
@@ -205,1134 +205,1134 @@
   {
     "model": "api.genre",
     "fields": {
-      "name": "Indie"
+      "name": "Salsa"
     },
     "pk": 30
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Acapella"
+      "name": "Trap"
     },
     "pk": 31
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Folk"
+      "name": "Indie"
     },
     "pk": 32
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Melodic Death"
+      "name": "Acapella"
     },
     "pk": 33
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Viking"
+      "name": "Folk"
     },
     "pk": 34
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Death"
+      "name": "Mbaqanga"
     },
     "pk": 35
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "OST"
+      "name": "Melodic Death"
     },
     "pk": 36
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Instrumental Djent"
+      "name": "Viking"
     },
     "pk": 37
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Djent"
+      "name": "Death"
     },
     "pk": 38
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Parody"
+      "name": "OST"
     },
     "pk": 39
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Manouche"
+      "name": "Instrumental Djent"
     },
     "pk": 40
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Reggaeton"
+      "name": "Djent"
     },
     "pk": 41
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Metalcore"
+      "name": "Parody"
     },
     "pk": 42
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Technical Death"
+      "name": "Manouche"
     },
     "pk": 43
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Dub"
+      "name": "Reggaeton"
     },
     "pk": 44
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Fusion"
+      "name": "Metalcore"
     },
     "pk": 45
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Groove"
+      "name": "Technical Death"
     },
     "pk": 46
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Dance"
+      "name": "Psychedelic"
     },
     "pk": 47
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Punk"
+      "name": "Garage"
     },
     "pk": 48
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Power"
+      "name": "Dub"
     },
     "pk": 49
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Funk"
+      "name": "Fusion"
     },
     "pk": 50
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Blackened Death"
+      "name": "Groove"
     },
     "pk": 51
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Ambient"
+      "name": "Dance"
     },
     "pk": 52
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Chanson"
+      "name": "Punk"
     },
     "pk": 53
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Garage"
+      "name": "Power"
     },
     "pk": 54
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Stoner"
+      "name": "Funk"
     },
     "pk": 55
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Doom"
+      "name": "Blackened Death"
     },
     "pk": 56
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Instrumental"
+      "name": "Ambient"
     },
     "pk": 57
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Art"
+      "name": "Chanson"
     },
     "pk": 58
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Country"
+      "name": "Swing"
     },
     "pk": 59
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "New Age"
+      "name": "Sludge"
     },
     "pk": 60
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Bluegrass"
+      "name": "Stoner"
     },
     "pk": 61
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Rockabilly"
+      "name": "Doom"
     },
     "pk": 62
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Conscious"
+      "name": "Instrumental"
     },
     "pk": 63
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Classique"
+      "name": "Ballad"
     },
     "pk": 64
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Swing"
+      "name": "Art"
     },
     "pk": 65
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Choir"
+      "name": "Country"
     },
     "pk": 66
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Romantique"
+      "name": "New Age"
     },
     "pk": 67
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Psychedelic"
+      "name": "Quiet Storm"
     },
     "pk": 68
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Eurodance"
+      "name": "Bluegrass"
     },
     "pk": 69
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Swamp"
+      "name": "Rockabilly"
     },
     "pk": 70
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Roots"
+      "name": "Conscious"
     },
     "pk": 71
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Ballad"
+      "name": "Classique"
     },
     "pk": 72
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Core"
+      "name": "Choir"
     },
     "pk": 73
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Pop-rap"
+      "name": "Romantique"
     },
     "pk": 74
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Black Metal"
+      "name": "Eurodance"
     },
     "pk": 75
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Trance"
+      "name": "Swamp"
     },
     "pk": 76
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Synth Pop"
+      "name": "Roots"
     },
     "pk": 77
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Mambo"
+      "name": "Core"
     },
     "pk": 78
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Experimental"
+      "name": "Pop-rap"
     },
     "pk": 79
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Speed"
+      "name": "Black Metal"
     },
     "pk": 80
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Nu"
+      "name": "Trance"
     },
     "pk": 81
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Post-punk"
+      "name": "Synth Pop"
     },
     "pk": 82
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Melodic Black"
+      "name": "Mambo"
     },
     "pk": 83
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Black"
+      "name": "Experimental"
     },
     "pk": 84
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Doo-Wop"
+      "name": "Speed"
     },
     "pk": 85
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Gothic"
+      "name": "Nu"
     },
     "pk": 86
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Slam"
+      "name": "Post-punk"
     },
     "pk": 87
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Industrial"
+      "name": "Melodic Black"
     },
     "pk": 88
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Darksynth"
+      "name": "Black"
     },
     "pk": 89
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Gospel"
+      "name": "Doo-Wop"
     },
     "pk": 90
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "DownTempo"
+      "name": "Gypsy"
     },
     "pk": 91
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Underground"
+      "name": "Gothic"
     },
     "pk": 92
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Western"
+      "name": "Slam"
     },
     "pk": 93
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Thrash"
+      "name": "Industrial"
     },
     "pk": 94
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Teenage"
+      "name": "Darksynth"
     },
     "pk": 95
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "British blues"
+      "name": "Gospel"
     },
     "pk": 96
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Yodel"
+      "name": "DownTempo"
     },
     "pk": 97
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "indie"
+      "name": "Downtempo"
     },
     "pk": 98
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Musical"
+      "name": "Underground"
     },
     "pk": 99
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Smooth"
+      "name": "Future"
     },
     "pk": 100
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Big Band"
+      "name": "Western"
     },
     "pk": 101
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Samba"
+      "name": "Thrash"
     },
     "pk": 102
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Opera"
+      "name": "Teenage"
     },
     "pk": 103
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Flamenco"
+      "name": "British blues"
     },
     "pk": 104
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Electronica"
+      "name": "Yodel"
     },
     "pk": 105
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Tri-pop"
+      "name": "indie"
     },
     "pk": 106
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Punk Rock"
+      "name": "Musical"
     },
     "pk": 107
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Gregorian"
+      "name": "Big Band"
     },
     "pk": 108
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Hip-hop"
+      "name": "Samba"
     },
     "pk": 109
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Néo-folk"
+      "name": "Opera"
     },
     "pk": 110
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Trip Pop"
+      "name": "Flamenco"
     },
     "pk": 111
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Rap Français"
+      "name": "Electronica"
     },
     "pk": 112
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Proto-punk"
+      "name": "Tri-pop"
     },
     "pk": 113
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Post"
+      "name": "Punk Rock"
     },
     "pk": 114
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Traditional"
+      "name": "Gregorian"
     },
     "pk": 115
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "New Wave"
+      "name": "Hip-hop"
     },
     "pk": 116
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Eurobeat"
+      "name": "Néo-folk"
     },
     "pk": 117
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Surf"
+      "name": "Trip Pop"
     },
     "pk": 118
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Avant-gardiste"
+      "name": "Rap Français"
     },
     "pk": 119
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "French Pop"
+      "name": "Proto-punk"
     },
     "pk": 120
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Baroque"
+      "name": "Post"
     },
     "pk": 121
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Valse"
+      "name": "Traditional"
     },
     "pk": 122
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Easy listening"
+      "name": "New Wave"
     },
     "pk": 123
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Trip Hop"
+      "name": "Eurobeat"
     },
     "pk": 124
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Variété"
+      "name": "Surf"
     },
     "pk": 125
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "March"
+      "name": "Avant-gardiste"
     },
     "pk": 126
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Techno"
+      "name": "French Pop"
     },
     "pk": 127
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Ragtime"
+      "name": "Baroque"
     },
     "pk": 128
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Celtic"
+      "name": "Valse"
     },
     "pk": 129
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Lofi"
+      "name": "Easy listening"
     },
     "pk": 130
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Gothique"
+      "name": "Trip Hop"
     },
     "pk": 131
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Alternatif"
+      "name": "Afropunk"
     },
     "pk": 132
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Latino"
+      "name": "Variété"
     },
     "pk": 133
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Mariachi"
+      "name": "March"
     },
     "pk": 134
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Monster"
+      "name": "Techno"
     },
     "pk": 135
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Post-Punk"
+      "name": "Trip pop"
     },
     "pk": 136
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Sludge"
+      "name": "Ragtime"
     },
     "pk": 137
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Ballet"
+      "name": "Celtic"
     },
     "pk": 138
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Bubblegum"
+      "name": "Lofi"
     },
     "pk": 139
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Doo-wop"
+      "name": "Gothique"
     },
     "pk": 140
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Post Rock"
+      "name": "Latino"
     },
     "pk": 141
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Power Ballad"
+      "name": "Alternatif"
     },
     "pk": 142
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Symphonique"
+      "name": "Mariachi"
     },
     "pk": 143
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Comedy"
+      "name": "Monster"
     },
     "pk": 144
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Heavy"
+      "name": "Post-Punk"
     },
     "pk": 145
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Synthpop"
+      "name": "Ballet"
     },
     "pk": 146
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Ska"
+      "name": "Bubblegum"
     },
     "pk": 147
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Instrumental Death"
+      "name": "Doo-wop"
     },
     "pk": 148
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Concrete Music"
+      "name": "Post Rock"
     },
     "pk": 149
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Interview"
+      "name": "Power Ballad"
     },
     "pk": 150
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "tropical"
+      "name": "Symphonique"
     },
     "pk": 151
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Bossa Nova"
+      "name": "Comedy"
     },
     "pk": 152
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Symphonic"
+      "name": "Heavy"
     },
     "pk": 153
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Folk Rock"
+      "name": "Synthpop"
     },
     "pk": 154
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Trad"
+      "name": "Ska"
     },
     "pk": 155
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Scat"
+      "name": "Instrumental Death"
     },
     "pk": 156
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Dancehall"
+      "name": "Concrete Music"
     },
     "pk": 157
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Noise Rock"
+      "name": "Interview"
     },
     "pk": 158
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Neo-swing"
+      "name": "tropical"
     },
     "pk": 159
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Sub Pop"
+      "name": "Bossa Nova"
     },
     "pk": 160
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Extreme"
+      "name": "Symphonic"
     },
     "pk": 161
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Psychedelia"
+      "name": "Soft"
     },
     "pk": 162
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Soft"
+      "name": "Folk Rock"
     },
     "pk": 163
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Merseybeat"
+      "name": "Spytrack"
     },
     "pk": 164
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Ballroom"
+      "name": "Trad"
     },
     "pk": 165
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Barbershop"
+      "name": "Scat"
     },
     "pk": 166
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Barbeshop"
+      "name": "Dancehall"
     },
     "pk": 167
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "West Coast Cool"
+      "name": "Acid"
     },
     "pk": 168
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Lo-Fi"
+      "name": "Noise Rock"
     },
     "pk": 169
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Ska-Punk"
+      "name": "Neo-swing"
     },
     "pk": 170
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Indie-pop"
+      "name": "Sub Pop"
     },
     "pk": 171
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Cuddlecore"
+      "name": "Extreme"
     },
     "pk": 172
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Dixieland"
+      "name": "Minimalist"
     },
     "pk": 173
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Blue-eyed Soul"
+      "name": "Psychedelia"
     },
     "pk": 174
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Raga"
+      "name": "Merseybeat"
     },
     "pk": 175
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Twee Pop"
+      "name": "Ballroom"
     },
     "pk": 176
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "British Dance Band"
+      "name": "Barbershop"
     },
     "pk": 177
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Drum & Bass"
+      "name": "Barbeshop"
     },
     "pk": 178
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Waltz"
+      "name": "West Coast Cool"
     },
     "pk": 179
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Minimalist"
+      "name": "Lo-Fi"
     },
     "pk": 180
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Mbaqanga"
+      "name": "Ska-Punk"
     },
     "pk": 181
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Afropunk"
+      "name": "Indie-pop"
     },
     "pk": 182
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Quiet Storm"
+      "name": "Cuddlecore"
     },
     "pk": 183
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Spytrack"
+      "name": "Dixieland"
     },
     "pk": 184
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Downtempo"
+      "name": "Blue-eyed Soul"
     },
     "pk": 185
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Acid"
+      "name": "Raga"
     },
     "pk": 186
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Gypsy"
+      "name": "Twee Pop"
     },
     "pk": 187
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Trip pop"
+      "name": "British Dance Band"
     },
     "pk": 188
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Neo-Progressive"
+      "name": "Drum & Bass"
     },
     "pk": 189
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Salsa"
+      "name": "Waltz"
     },
     "pk": 190
   },
   {
     "model": "api.genre",
     "fields": {
-      "name": "Future"
+      "name": "Neo-Progressive"
     },
     "pk": 191
   }
