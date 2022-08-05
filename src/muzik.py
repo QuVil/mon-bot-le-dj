@@ -208,6 +208,11 @@ class Muzik:
                     track = res['tracks']['items'][0]
                 except IndexError:
                     bad_format.append((search, market))
+                except SpotifyException as e:
+                    if e.http_status == 404:
+                        bad_format.append((search, market))
+                    else:
+                        raise e
                 else:
                     # succeed to fetch an id
                     break
