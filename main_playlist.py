@@ -23,9 +23,9 @@ if __name__ == "__main__":
     ach.update_missing(ids, muzik.name)
 
     # generate playlist with only the songs that "exists"
-    playlist = create_playlist(sheet.loc[ids.index], ["Gë"], count_factor=0.7, inhib_factor=2,
-                               min_score=7.5, size=200, default_grade=5, eliminating_grade=4.6, default_genres=True,
-                               playlist_type="reco")
+    playlist = create_playlist(sheet.loc[ids.index], ["Qu", "Gë"], count_factor=0.7, inhib_factor=2,
+                               min_score=7.8, size=170, default_grade=5, eliminating_grade=4.6, default_genres=True,
+                               playlist_type="default")
 
     playlist = shuffle_playlist(playlist, default_transition="4,0", chain_factor=.7, desperation_factor=1,
                                 default_threshold=8.5)

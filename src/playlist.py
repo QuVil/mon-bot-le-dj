@@ -33,6 +33,11 @@ def create_playlist(data, people=None, count_factor=.1, inhib_factor=2, min_scor
     # TODO allow for more than 1 person to create a recommended playlist! Couldn't figure out the snippet to do it right
     if playlist_type == "reco":
         data = data[data[people[0]].apply(lambda x: "." not in x and not x.isnumeric() and x != "")]
+    elif playlist_type == "new":
+        # Keeping new songs
+        nan_value = float("NaN")
+        data.replace("", nan_value, inplace=True)
+        data = data[data.isnull().all(1)]
     else:
         for i in range(data.columns.size):
             data[data.columns[i]] = pd.to_numeric(data[data.columns[i]], errors='coerce')
@@ -55,8 +60,8 @@ def create_playlist(data, people=None, count_factor=.1, inhib_factor=2, min_scor
     # Hard to do this shit inplace -- if no grades at all, give it a chance to play with default grade
     data = data.dropna(how="all").append(data[data.isnull().all(axis=1)].fillna(default_grade))
 
-    # No need for score for recommendation PLs
-    if playlist_type != "reco":
+    # No need for score for recommendation or new PLs
+    if playlist_type == "default":
         # Mean of all notes for each track
         data["mean"] = data[data.columns].mean(axis=1)
         # Amount of notes for each track
@@ -74,7 +79,7 @@ def create_playlist(data, people=None, count_factor=.1, inhib_factor=2, min_scor
     data["rank"] = data["score"].rank(method="min")
 
     # Eliminating tracks with a grade under the required minimum
-    if playlist_type != "reco":
+    if playlist_type == "default":
         data = data[data[data.columns[:-4]].min(axis=1) > eliminating_grade]
 
     # Creating bootstrap sample of adequate size
