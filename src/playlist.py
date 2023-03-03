@@ -10,7 +10,7 @@ def create_playlist(data, people=None, count_factor=.1, inhib_factor=2, min_scor
                     eliminating_grade=4.6, default_genres=True, playlist_type="default"):
     """
     Create a personalized playlist with ACHMUSIK data loaded directly from the sheet
-    :param playlist_type: default or reco
+    :param playlist_type: default/reco/new
     :param default_genres: Whether or not to apply default genre grades to total table
     :param data:
     :param people: The people presently present at the gathering to include in the scoring
